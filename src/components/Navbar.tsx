@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Logo from '../../public/logo.webp'
 import Logo_blur from '../../public/logo-blur.webp'
 
@@ -27,99 +28,208 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section with Blur Loading */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
-            <div className="relative h-10 w-16 sm:h-12 sm:w-18 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300">
-              {/* Blur placeholder */}
-              <img 
-                src={Logo_blur} 
-                alt="Quickpulse Safaris" 
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                  imageLoaded ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-              {/* Actual logo */}
-              <img 
-                src={Logo} 
-                alt="Quickpulse Safaris" 
-                onLoad={() => setImageLoaded(true)}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
-              {/* Gradient overlay */}
-            </div>
-            
-            <div className="leading-tight">
-              <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
-                Quickpulse Safaris
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+              <div className="relative h-10 w-16 sm:h-12 sm:w-18 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300">
+                {/* Blur placeholder */}
+                <img 
+                  src={Logo_blur} 
+                  alt="Quickpulse Safaris" 
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                    imageLoaded ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                {/* Actual logo */}
+                <img 
+                  src={Logo} 
+                  alt="Quickpulse Safaris" 
+                  onLoad={() => setImageLoaded(true)}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                    imageLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
               </div>
-              <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium tracking-wide">
-                Feel the Pulse of Adventure
+              
+              <div className="leading-tight">
+                <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                  Quickpulse Safaris
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium tracking-wide">
+                  Feel the Pulse of Adventure
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-2">
-            <NavLink to="/" className={desktopNavItemClass} end>Home</NavLink>
-            <NavLink to="/about" className={desktopNavItemClass}>About</NavLink>
-            <NavLink to="/destinations" className={desktopNavItemClass}>Destinations</NavLink>
-            <NavLink to="/experiences" className={desktopNavItemClass}>Experiences</NavLink>
-            <NavLink to="/tours" className={desktopNavItemClass}>Tours</NavLink>
-            <NavLink to="/gallery" className={desktopNavItemClass}>Gallery</NavLink>
-            <NavLink to="/faq" className={desktopNavItemClass}>FAQ</NavLink>
-            <NavLink to="/contact" className={desktopNavItemClass}>Contact</NavLink>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <NavLink to="/" className={desktopNavItemClass} end>Home</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <NavLink to="/about" className={desktopNavItemClass}>About</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <NavLink to="/destinations" className={desktopNavItemClass}>Destinations</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <NavLink to="/experiences" className={desktopNavItemClass}>Experiences</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <NavLink to="/tours" className={desktopNavItemClass}>Tours</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <NavLink to="/gallery" className={desktopNavItemClass}>Gallery</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <NavLink to="/faq" className={desktopNavItemClass}>FAQ</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <NavLink to="/contact" className={desktopNavItemClass}>Contact</NavLink>
+            </motion.div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
             onClick={() => setOpen((v) => !v)} 
             aria-label="Toggle menu" 
-            className="lg:hidden p-2 sm:p-2.5 rounded-xl hover:bg-gray-100/80 transition-all duration-300 border border-transparent hover:border-gray-200 flex-shrink-0"
+            className="lg:hidden cursor-pointer p-2 sm:p-2.5 rounded-xl hover:bg-gray-100/80 transition-all duration-300 border border-transparent hover:border-gray-200 flex-shrink-0"
           >
             {open ? (
               <FaTimes className="h-5 w-5 text-gray-700" />
             ) : (
               <FaBars className="h-5 w-5 text-gray-700" />
             )}
-          </button>
+          </motion.button>
         </div>
       </div>
 
-     {/* Mobile Menu */}
-<div
-  className={`lg:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-xl overflow-hidden transition-all duration-500 ${
-    open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-  }`}
->
-  <nav className="px-4 py-3 space-y-1">
-    <NavLink onClick={() => setOpen(false)} to="/" className={navItemClass} end>
-      Home
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/about" className={navItemClass}>
-      About
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/destinations" className={navItemClass}>
-      Destinations
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/experiences" className={navItemClass}>
-      Experiences
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/tours" className={navItemClass}>
-      Tours
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/gallery" className={navItemClass}>
-      Gallery
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
-      FAQ
-    </NavLink>
-    <NavLink onClick={() => setOpen(false)} to="/contact" className={navItemClass}>
-      Contact
-    </NavLink>
-  </nav>
-</div>
-
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ maxHeight: 0, opacity: 0 }}
+            animate={{ maxHeight: 1000, opacity: 1 }}
+            exit={{ maxHeight: 0, opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="lg:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-xl overflow-hidden"
+          >
+            <nav className="px-4 py-3 space-y-1">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/" className={navItemClass} end>
+                  Home
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/about" className={navItemClass}>
+                  About
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/destinations" className={navItemClass}>
+                  Destinations
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/experiences" className={navItemClass}>
+                  Experiences
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/tours" className={navItemClass}>
+                  Tours
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/gallery" className={navItemClass}>
+                  Gallery
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.7 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
+                  FAQ
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.8 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/contact" className={navItemClass}>
+                  Contact
+                </NavLink>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
