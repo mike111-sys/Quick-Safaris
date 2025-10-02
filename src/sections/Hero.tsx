@@ -6,32 +6,49 @@ import background_1 from '../assets/amboseli.webp'
 import background_2 from '../assets/maasai.webp'
 import background_3 from '../assets/serengeti.webp'
 import background_4 from '../assets/zanzibar.webp'
+import background_1_blur from '../assets/amboseli-blur.webp'
+import background_2_blur from '../assets/maasai-blur.webp'
+import background_3_blur from '../assets/serengeti-blur.webp'
+import background_4_blur from '../assets/zanzibar-blur.webp'
 
-// Use the imported images instead of external URLs
-const BACKGROUND_IMAGES = [
-  background_1, // Amboseli
-  background_2, // Maasai Mara
-  background_3, // Serengeti
-  background_4, // Zanzibar
+interface Image {
+  full: string;
+  blur: string;
+}
+
+const BACKGROUND_IMAGES: Image[] = [
+  { full: background_1, blur: background_1_blur }, // Amboseli
+  { full: background_2, blur: background_2_blur }, // Maasai Mara
+  { full: background_3, blur: background_3_blur }, // Serengeti
+  { full: background_4, blur: background_4_blur }, // Zanzibar
 ]
 
-const useImagePreload = (urls: string[]) => {
+const useNextImagePreload = (images: Image[], index: number) => {
   useEffect(() => {
-    urls.forEach((url) => {
-      const img = new Image()
-      img.src = url
-    })
-  }, [urls])
+    const nextIndex = (index + 1) % images.length
+    const img = new Image()
+    img.src = images[nextIndex].full
+  }, [index, images])
 }
+
 
 const Hero = () => {
   const images = useMemo(() => BACKGROUND_IMAGES, [])
   const [index, setIndex] = useState(0)
-  useImagePreload(images)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useNextImagePreload(images, index)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = images[index].full
+    img.onload = () => setIsLoaded(true)
+  }, [index, images])
 
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % images.length)
+      setIsLoaded(false)
     }, 5000)
     return () => clearInterval(id)
   }, [images.length])
@@ -48,7 +65,7 @@ const Hero = () => {
             transition={{ duration: 1.2, ease: 'easeOut' }}
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${images[index]})`,
+              backgroundImage: `url(${isLoaded ? images[index].full : images[index].blur})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
