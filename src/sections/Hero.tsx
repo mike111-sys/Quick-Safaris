@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaArrowRight } from 'react-icons/fa6'
+import { FaArrowRight, FaArrowDown } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import background_1 from '../assets/amboseli.webp'
 import background_2 from '../assets/maasai.webp'
@@ -37,6 +37,11 @@ const Hero = () => {
   const [index, setIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
 
+  const handleScrollDown = () => {
+    window.scrollBy({ top: window.innerHeight * 0.9, left: 0, behavior: 'smooth' })
+  }
+  
+
   useNextImagePreload(images, index)
 
   useEffect(() => {
@@ -54,7 +59,7 @@ const Hero = () => {
   }, [images.length])
 
   return (
-    <section className="relative h-[91vh] md:h-[100vh] w-full overflow-hidden">
+    <section className="relative h-[91vh] md:h-[92vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <AnimatePresence>
           <motion.div
@@ -95,7 +100,7 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-8 flex flex-wrap gap-3">
+            className="mt-8 flex flex-wrap gap-5">
             <Link to="/experiences" className="inline-flex items-center gap-2 px-5 py-3 rounded bg-emerald-600 hover:bg-emerald-700 font-medium">
               Explore Experiences <FaArrowRight />
             </Link>
@@ -103,6 +108,18 @@ const Hero = () => {
               Plan Your Trip
             </Link>
           </motion.div>
+          <motion.button
+  onClick={handleScrollDown}
+  initial={{ y: 20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ delay: 0.55, duration: 0.6 }}
+  className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:left-auto lg:right-6 lg:translate-x-0 flex items-center justify-center w-12 h-12 rounded-full border border-white/40 text-white/90 hover:text-white hover:border-white cursor-pointer"
+>
+  <FaArrowDown className="animate-bounce" />
+</motion.button>
+
+
+
         </div>
       </div>
     </section>
