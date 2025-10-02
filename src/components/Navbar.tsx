@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo Section with Blur Loading */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
-            <div className="relative h-10 w-10 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl overflow-hidden ring-2 ring-emerald-500/20 group-hover:ring-emerald-500/40 transition-all duration-300">
+            <div className="relative h-10 w-16 sm:h-12 sm:w-18 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300">
               {/* Blur placeholder */}
               <img 
                 src={Logo_blur} 
@@ -47,7 +47,6 @@ const Navbar = () => {
                 }`}
               />
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 group-hover:from-emerald-500/20 group-hover:to-cyan-500/20 transition-all duration-300" />
             </div>
             
             <div className="leading-tight">
