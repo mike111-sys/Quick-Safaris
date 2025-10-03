@@ -55,10 +55,10 @@ const Navbar = () => {
               </div>
               
               <div className="leading-tight">
-                <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-amber-600 to-cyan-600 bg-clip-text text-transparent">
                   Quickpulse Safaris
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-gray-500 font-medium tracking-wide">
+                <div className="text-[10px] sm:text-[11px] text-gray-700 font-medium tracking-wide">
                   Feel the Pulse of Adventure
                 </div>
               </div>

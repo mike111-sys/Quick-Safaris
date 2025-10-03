@@ -101,7 +101,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="mt-8 flex flex-wrap gap-5">
-            <Link to="/experiences" className="inline-flex items-center gap-2 px-5 py-3 rounded bg-emerald-600 hover:bg-emerald-700 font-medium">
+            <Link to="/experiences" className="inline-flex items-center gap-2 px-5 py-3 rounded bg-amber-600 hover:bg-amber-700 font-medium">
               Explore Experiences <FaArrowRight />
             </Link>
             <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded bg-white/10 backdrop-blur border border-white/30 hover:bg-white/20 font-medium">
