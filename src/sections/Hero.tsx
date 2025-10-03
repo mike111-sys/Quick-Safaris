@@ -2,14 +2,14 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowRight, FaArrowDown } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-import background_1 from '../assets/amboseli.webp'
-import background_2 from '../assets/maasai.webp'
-import background_3 from '../assets/serengeti.webp'
-import background_4 from '../assets/zanzibar.webp'
-import background_1_blur from '../assets/amboseli-blur.webp'
-import background_2_blur from '../assets/maasai-blur.webp'
-import background_3_blur from '../assets/serengeti-blur.webp'
-import background_4_blur from '../assets/zanzibar-blur.webp'
+import background_1 from '../assets/Hero/amboseli.webp'
+import background_2 from '../assets/Hero/maasai.webp'
+import background_3 from '../assets/Hero/serengeti.webp'
+import background_4 from '../assets/Hero/zanzibar.webp'
+import background_1_blur from '../assets/Hero/amboseli-blur.webp'
+import background_2_blur from '../assets/Hero/maasai-blur.webp'
+import background_3_blur from '../assets/Hero/serengeti-blur.webp'
+import background_4_blur from '../assets/Hero/zanzibar-blur.webp'
 
 interface Image {
   full: string;
@@ -59,7 +59,7 @@ const Hero = () => {
   }, [images.length])
 
   return (
-    <section className="relative h-[91vh] md:h-[92vh] w-full overflow-hidden">
+    <section className="relative h-[93vh] md:h-[94vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <AnimatePresence>
           <motion.div
