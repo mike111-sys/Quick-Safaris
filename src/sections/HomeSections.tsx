@@ -36,7 +36,7 @@ const HomeSections = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl text-center md:text-3xl font-bold">About Quickpulse</h2>
+            <h2 className="text-2xl  md:text-3xl font-bold">About Quickpulse</h2>
             <p className="mt-3 text-gray-600">
               We craft authentic safaris & travel experiences across Africa, 
               from wildlife encounters and cultural immersions to luxury getaways 
@@ -44,7 +44,7 @@ const HomeSections = () => {
             </p>
             <Link 
               to="/about" 
-              className="inline-block mt-4 px-4 py-2 rounded bg-gray-900 text-white hover:bg-black transition"
+              className="inline-block mt-4 px-4 py-2 rounded bg-amber-600 text-white hover:bg-amber-700 transition"
             >
               Learn More
             </Link>
@@ -143,7 +143,7 @@ const HomeSections = () => {
         whileInView={{ opacity: 1, y: 0 }} 
         viewport={{ once: true }} 
         transition={{ duration: 0.7 }}
-        className="bg-emerald-600 text-white"
+        className="bg-amber-600 text-white"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
