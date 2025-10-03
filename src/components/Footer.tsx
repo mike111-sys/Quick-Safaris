@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaFacebookF, FaInstagram, FaTiktok, FaXTwitter } from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 import logo from '../../public/logo.webp'
 import logo_blur from '../../public/logo-blur.webp'
