@@ -1,9 +1,29 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import image from '../assets/safari.webp'
-import image_blur from '../assets/safari-blur.webp'
+import image from '../assets/Home Sections/safari.webp'
+import image_blur from '../assets/Home Sections/safari-blur.webp'
+import beach from '../assets/Home Sections/beach.webp'
+import beach_blur from '../assets/Home Sections/beach-blur.webp'
+import cultural from '../assets/Home Sections/community.webp'
+import cultural_blur from '../assets/Home Sections/community-blur.webp'
+import adventure from '../assets/Home Sections/travel.webp'
+import adventure_blur from '../assets/Home Sections/travel-blur.webp'
+import luxury from '../assets/Home Sections/luxury.webp'
+import luxury_blur from '../assets/Home Sections/luxury-blur.webp'
+import wildlife from '../assets/Home Sections/wildlife.webp'
+import wildlife_blur from '../assets/Home Sections/wildlife-blur.webp'
+
 
 const HomeSections = () => {
+  const services = [
+    { name: 'Wildlife Safaris', image: wildlife, imageBlur: wildlife_blur, alt: 'Wildlife safari' },
+    { name: 'Cultural & Community Tours', image: cultural, imageBlur: cultural_blur, alt: 'Cultural tour' },
+    { name: 'Trekking & Adventure', image: adventure, imageBlur: adventure_blur, alt: 'Adventure trekking' },
+    { name: 'Luxury & Mid-Range Packages', image: luxury, imageBlur: luxury_blur, alt: 'Luxury travel' },
+    { name: 'Beach Escapes', image: beach, imageBlur: beach_blur, alt: 'Beach escape' },
+    { name: 'Travel Logistics', image: cultural, imageBlur: cultural_blur, alt: 'Travel logistics' },
+  ]
+
   return (
     <div>
       {/* About Section */}
@@ -16,9 +36,9 @@ const HomeSections = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold">About Quickpulse</h2>
+            <h2 className="text-2xl text-center md:text-3xl font-bold">About Quickpulse</h2>
             <p className="mt-3 text-gray-600">
-              We craft authentic safaris & travel experiences across Africa — 
+              We craft authentic safaris & travel experiences across Africa, 
               from wildlife encounters and cultural immersions to luxury getaways 
               and adventure expeditions. Every journey is tailored to you.
             </p>
@@ -56,28 +76,36 @@ const HomeSections = () => {
       {/* Services Section */}
       <section className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl md:text-3xl font-bold">Our Services</h2>
+          <h2 className="text-2xl md:text-3xl text-center font-bold">Our Services</h2>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              'Wildlife Safaris',
-              'Cultural & Community Tours',
-              'Trekking & Adventure',
-              'Luxury & Mid-Range Packages',
-              'Beach Escapes',
-              'Travel Logistics'
-            ].map((s, i) => (
+            {services.map((s, i) => (
               <motion.div 
-                key={s} 
+                key={s.name} 
                 initial={{ opacity: 0, y: 20 }} 
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="border rounded-lg p-6 bg-white shadow-sm hover:shadow-md transition"
+                className="border rounded-lg bg-white shadow-sm hover:shadow-md transition overflow-hidden"
               >
-                <div className="font-semibold">{s}</div>
-                <p className="mt-2 text-gray-600">
-                  Tailored to your style and budget with expert guides and seamless planning.
-                </p>
+                <div className="relative aspect-[4/3] w-full">
+                  <img 
+                    src={s.imageBlur} 
+                    alt={`${s.alt} blurred placeholder`} 
+                    className="absolute inset-0 w-full h-full object-cover blur-lg scale-105"
+                  />
+                  <img 
+                    src={s.image} 
+                    alt={s.alt} 
+                    className="relative w-full h-full object-cover transition-opacity duration-700"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="font-semibold">{s.name}</div>
+                  <p className="mt-2 text-gray-600">
+                    Tailored to your style and budget with expert guides and seamless planning.
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -86,7 +114,7 @@ const HomeSections = () => {
 
       {/* Why Travel Section */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold">Why Travel With Us?</h2>
+        <h2 className="text-2xl md:text-3xl text-center font-bold">Why Travel With Us?</h2>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
             { title: 'Tailor-Made', desc: 'Every journey fits your style & budget.' },
