@@ -12,16 +12,18 @@ import luxury from '../assets/Home Sections/luxury.webp'
 import luxury_blur from '../assets/Home Sections/luxury-blur.webp'
 import wildlife from '../assets/Home Sections/wildlife.webp'
 import wildlife_blur from '../assets/Home Sections/wildlife-blur.webp'
+import trekking from '../assets/Home Sections/trekking.webp'
+import trekking_blur from '../assets/Home Sections/trekking-blur.webp'
 
 
 const HomeSections = () => {
   const services = [
     { name: 'Wildlife Safaris', image: wildlife, imageBlur: wildlife_blur, alt: 'Wildlife safari' },
     { name: 'Cultural & Community Tours', image: cultural, imageBlur: cultural_blur, alt: 'Cultural tour' },
-    { name: 'Trekking & Adventure', image: adventure, imageBlur: adventure_blur, alt: 'Adventure trekking' },
+    { name: 'Travel Logistics', image: adventure, imageBlur: adventure_blur, alt: 'Travel logistics' },
+    { name: 'Trekking & Adventure', image: trekking, imageBlur: trekking_blur, alt: 'Adventure trekking' },
     { name: 'Luxury & Mid-Range Packages', image: luxury, imageBlur: luxury_blur, alt: 'Luxury travel' },
-    { name: 'Beach Escapes', image: beach, imageBlur: beach_blur, alt: 'Beach escape' },
-    { name: 'Travel Logistics', image: cultural, imageBlur: cultural_blur, alt: 'Travel logistics' },
+    { name: 'Beach Escapes', image: beach, imageBlur: beach_blur, alt: 'Beach escape' }
   ]
 
   return (
