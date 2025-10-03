@@ -7,7 +7,6 @@ import Destinations from './pages/Destinations'
 import Experiences from './pages/Experiences'
 import Contact from './pages/Contact'
 import Tours from './pages/Tours'
-import Gallery from './pages/Gallery'
 import FAQ from './pages/FAQ'
 import Booking from './pages/Booking'
 import Privacy from './pages/Privacy'
@@ -26,7 +25,6 @@ const App = () => {
             <Route path="/experiences" element={<Experiences />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/tours" element={<Tours />} />
-            <Route path="/gallery" element={<Gallery />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/privacy" element={<Privacy />} />
