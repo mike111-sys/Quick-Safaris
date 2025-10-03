@@ -167,31 +167,6 @@ const HomeSections = () => {
     ))}
   </div>
 </section>
-
-
-      {/* CTA Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        viewport={{ once: true }} 
-        transition={{ duration: 0.7 }}
-        className="bg-amber-600 text-white"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-            <div className="text-2xl md:text-3xl font-bold">
-              Ready to Feel the Pulse of Adventure?
-            </div>
-            <p className="text-emerald-50">Let’s plan a trip you’ll remember forever.</p>
-          </div>
-          <Link 
-            to="/contact" 
-            className="px-5 py-3 rounded bg-white text-emerald-700 font-medium hover:bg-gray-100 transition"
-          >
-            Plan Your Trip
-          </Link>
-        </div>
-      </motion.section>
     </div>
   )
 }
