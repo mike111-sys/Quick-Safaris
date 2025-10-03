@@ -210,7 +210,7 @@ const Tours = () => {
               value={formData.budget}
               onChange={handleInputChange}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-base py-3"
-              placeholder="Enter your budget per person, e.g., $3,000"
+              placeholder="Enter your budget per person, e.g., $1,000"
             />
           </div>
 
@@ -236,13 +236,13 @@ const Tours = () => {
   <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
     <button
       onClick={handleSubmit}
-      className="w-full sm:w-auto px-6 py-3 rounded bg-amber-600 text-white font-medium hover:bg-amber-700 transition text-sm sm:text-base"
+      className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded bg-amber-600 text-white font-medium hover:bg-amber-700 transition text-sm sm:text-base"
     >
       Submit Booking Request
     </button>
     <Link
       to="/contact"
-      className="w-full sm:w-auto px-6 py-3 rounded border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition sm:text-base text-center"
+      className="w-full cursor-pointer sm:w-auto px-6 py-3 rounded border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition sm:text-base text-center"
     >
       Contact Us
     </Link>
