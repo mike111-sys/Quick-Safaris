@@ -24,10 +24,12 @@ const AppContent = () => {
 
   // Initial Loader (for home)
   useEffect(() => {
-    if (logoLoaded && heroLoaded && location.pathname === '/') {
-      const timer = setTimeout(() => setIsReady(true), 700)
-      return () => clearTimeout(timer)
-    } else if (location.pathname !== '/') {
+    if (location.pathname === '/') {
+      // Even if logo/hero fail to load, don't block the app forever
+      const timeout = setTimeout(() => setIsReady(true), 1500)
+      if (logoLoaded && heroLoaded) setIsReady(true)
+      return () => clearTimeout(timeout)
+    } else {
       setIsReady(true)
     }
   }, [logoLoaded, heroLoaded, location.pathname])
@@ -36,7 +38,7 @@ const AppContent = () => {
   useEffect(() => {
     if (isReady) {
       setRouteLoading(true)
-      const timer = setTimeout(() => setRouteLoading(false), 500)
+      const timer = setTimeout(() => setRouteLoading(false), 300)
       return () => clearTimeout(timer)
     }
   }, [location.pathname])

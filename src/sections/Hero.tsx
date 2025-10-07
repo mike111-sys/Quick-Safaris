@@ -44,16 +44,33 @@ const Hero: React.FC<HeroProps> = ({ onHeroLoaded }) => {
   const [firstLoadComplete, setFirstLoadComplete] = useState(false)
 
   useEffect(() => {
+    // Show blur immediately
+    setIsLoaded(false)
+  
     const img = new Image()
     img.src = images[index].full
     img.onload = () => {
+      // Instantly switch to full image when loaded
       setIsLoaded(true)
+  
+      // Notify parent early (so the main page shows right away)
       if (!firstLoadComplete) {
         setFirstLoadComplete(true)
-        onHeroLoaded?.() // Notify App once hero’s first image is loaded
+        onHeroLoaded?.()
       }
     }
+  
+    // If image takes too long, still reveal page after 1s
+    const timer = setTimeout(() => {
+      if (!firstLoadComplete) {
+        setFirstLoadComplete(true)
+        onHeroLoaded?.()
+      }
+    }, 1000)
+  
+    return () => clearTimeout(timer)
   }, [index, images, firstLoadComplete, onHeroLoaded])
+  
 
   const handleScrollDown = () => {
     window.scrollBy({ top: window.innerHeight * 0.9, left: 0, behavior: 'smooth' })
@@ -61,12 +78,6 @@ const Hero: React.FC<HeroProps> = ({ onHeroLoaded }) => {
   
 
   useNextImagePreload(images, index)
-
-  useEffect(() => {
-    const img = new Image()
-    img.src = images[index].full
-    img.onload = () => setIsLoaded(true)
-  }, [index, images])
 
   useEffect(() => {
     const id = setInterval(() => {

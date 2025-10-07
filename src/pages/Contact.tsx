@@ -148,10 +148,10 @@ const Contact = () => {
           <p className="text-gray-600">
             <span className="font-semibold">Phone:</span>{' '}
             <a
-              href="tel:+254112770494"
+              href="tel:+254704041059"
               className="text-amber-600 hover:text-amber-700 transition"
             >
-              +254 112 770 494
+              +254 704 041 059
             </a>
           </p>
         </div>

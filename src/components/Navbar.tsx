@@ -27,10 +27,6 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
  const [open, setOpen] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
   
-  const handleLogoLoad = () => {
-    setImageLoaded(true)
-    onLogoLoaded?.() // Notify App when loaded
-  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200/50 shadow-sm">
@@ -46,21 +42,23 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               <div className="relative h-10 w-16 sm:h-12 sm:w-18 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300">
                 {/* Blur placeholder */}
                 <img 
-                 onLoad={handleLogoLoad}
                   src={Logo_blur} 
                   alt="Quickpulse Safaris" 
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
                     imageLoaded ? 'opacity-0' : 'opacity-100'
                   }`}
                 />
                 {/* Actual logo */}
                 <img 
                   src={Logo} 
-                  alt="Quickpulse Safaris" 
-                  onLoad={() => setImageLoaded(true)}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  onLoad={() => {
+                    setImageLoaded(true)
+                    onLogoLoaded?.() // ✅ notify parent that main logo loaded
+                  }}                  alt="Quickpulse Safaris" 
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
                     imageLoaded ? 'opacity-100' : 'opacity-0'
                   }`}
+                  loading='lazy'
                 />
               </div>
               
