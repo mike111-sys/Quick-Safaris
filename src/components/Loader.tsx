@@ -14,7 +14,6 @@ const Loader = () => {
         transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
         className="w-10 h-10 border-4 border-amber-600 border-t-transparent rounded-full mb-4"
       />
-      <p className="text-gray-700 font-medium tracking-wide">Loading...</p>
     </motion.div>
   )
 }

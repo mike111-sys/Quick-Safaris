@@ -87,7 +87,7 @@ Your gateway to extra-ordinary journeys
                 { to: '/destinations', label: 'Destinations' },
                 { to: '/experiences', label: 'Experiences' },
                 { to: '/tours', label: 'Tours' },
-                { to: '/faq', label: 'FAQ' },
+                { to: '/faq', label: 'FAQs' },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <Link

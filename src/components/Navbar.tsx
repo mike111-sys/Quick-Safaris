@@ -118,7 +118,7 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              <NavLink to="/faq" className={desktopNavItemClass}>FAQ</NavLink>
+              <NavLink to="/faq" className={desktopNavItemClass}>FAQs</NavLink>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -210,7 +210,7 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
                 transition={{ duration: 0.3, delay: 0.7 }}
               >
                 <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
-                  FAQ
+                  FAQs
                 </NavLink>
               </motion.div>
               <motion.div
