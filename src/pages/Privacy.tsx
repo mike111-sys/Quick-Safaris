@@ -129,16 +129,6 @@ const Privacy = () => {
           </p>
         </div>
 
-        {/* Policy Updates */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-300">
-          <h2 className="text-2xl font-semibold text-gray-900" id="policy-updates">
-            Policy Updates
-          </h2>
-          <p className="mt-4 text-gray-600 sm:text-base">
-            We may update this policy to reflect changes in our practices or legal requirements. Updates will be posted here, with the effective date below.
-          </p>
-        </div>
-
       
       </motion.div>
     </section>

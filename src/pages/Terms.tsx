@@ -157,10 +157,6 @@ const Terms = () => {
           </p>
         </div>
 
-        {/* Effective Date */}
-        <p className="mt-8 text-sm text-gray-500 text-center">
-          Effective date: October 3, 2025
-        </p>
       </motion.div>
     </section>
   );
