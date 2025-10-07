@@ -5,6 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Logo from '/logo.webp'
 import Logo_blur from '/logo-blur.webp'
 
+interface NavbarProps {
+  onLogoLoaded?: () => void
+}
+
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
   `block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
     isActive 
@@ -19,9 +23,14 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
       : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50/80 hover:shadow-sm'
   }`
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const Navbar: React.FC<NavbarProps> = ({ onLogoLoaded }) => {
+ const [open, setOpen] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+  
+  const handleLogoLoad = () => {
+    setImageLoaded(true)
+    onLogoLoaded?.() // Notify App when loaded
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gray-200/50 shadow-sm">
@@ -37,6 +46,7 @@ const Navbar = () => {
               <div className="relative h-10 w-16 sm:h-12 sm:w-18 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300">
                 {/* Blur placeholder */}
                 <img 
+                 onLoad={handleLogoLoad}
                   src={Logo_blur} 
                   alt="Quickpulse Safaris" 
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${

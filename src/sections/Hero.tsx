@@ -16,6 +16,10 @@ interface Image {
   blur: string;
 }
 
+interface HeroProps {
+  onHeroLoaded?: () => void
+}
+
 const BACKGROUND_IMAGES: Image[] = [
   { full: background_1, blur: background_1_blur }, // Amboseli
   { full: background_2, blur: background_2_blur }, // Maasai Mara
@@ -32,10 +36,24 @@ const useNextImagePreload = (images: Image[], index: number) => {
 }
 
 
-const Hero = () => {
-  const images = useMemo(() => BACKGROUND_IMAGES, [])
+
+const Hero: React.FC<HeroProps> = ({ onHeroLoaded }) => {
+ const images = useMemo(() => BACKGROUND_IMAGES, [])
   const [index, setIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [firstLoadComplete, setFirstLoadComplete] = useState(false)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = images[index].full
+    img.onload = () => {
+      setIsLoaded(true)
+      if (!firstLoadComplete) {
+        setFirstLoadComplete(true)
+        onHeroLoaded?.() // Notify App once hero’s first image is loaded
+      }
+    }
+  }, [index, images, firstLoadComplete, onHeroLoaded])
 
   const handleScrollDown = () => {
     window.scrollBy({ top: window.innerHeight * 0.9, left: 0, behavior: 'smooth' })
