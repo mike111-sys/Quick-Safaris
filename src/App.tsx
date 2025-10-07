@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
@@ -21,70 +20,63 @@ const AppContent = () => {
   const [logoLoaded, setLogoLoaded] = useState(false)
   const [heroLoaded, setHeroLoaded] = useState(false)
   const [isReady, setIsReady] = useState(false)
+  const [routeLoading, setRouteLoading] = useState(false)
 
- // New: route change loader state
- const [routeLoading, setRouteLoading] = useState(false)
-
-  // First Loader; home
+  // Initial Loader (for home)
   useEffect(() => {
     if (logoLoaded && heroLoaded && location.pathname === '/') {
       const timer = setTimeout(() => setIsReady(true), 700)
       return () => clearTimeout(timer)
     } else if (location.pathname !== '/') {
-      // For other pages, load immediately
       setIsReady(true)
     }
   }, [logoLoaded, heroLoaded, location.pathname])
 
-   // Route change loader
-   useEffect(() => {
+  // Route change loader
+  useEffect(() => {
     if (isReady) {
       setRouteLoading(true)
-      const timer = setTimeout(() => setRouteLoading(false), 500) // Loader duration
+      const timer = setTimeout(() => setRouteLoading(false), 500)
       return () => clearTimeout(timer)
     }
   }, [location.pathname])
 
+  if (!isReady) {
+    return <Loader />
+  }
+
+  if (routeLoading) {
+    return <Loader />
+  }
+
   return (
-    <>
-    {/* Initial full loader (only on first page load) */}
-      <AnimatePresence>{!isReady && <Loader key="loader" />}</AnimatePresence>
+    <div className={`${isReady ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
+      <Navbar onLogoLoaded={() => setLogoLoaded(true)} />
 
-        {/* Route change loader */}
-        <AnimatePresence>
-        {isReady && routeLoading && <Loader key="route-loader" />}
-      </AnimatePresence>
+      <main className="flex-1">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home onHeroLoaded={() => setHeroLoaded(true)} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/tours" element={<Tours />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+        </Routes>
+      </main>
 
- 
-      <div className={`${isReady ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
-      
-        <Navbar onLogoLoaded={() => setLogoLoaded(true)} />
-
-        <main className="flex-1">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home onHeroLoaded={() => setHeroLoaded(true)} />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/experiences" element={<Experiences />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/tours" element={<Tours />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-          </Routes>
-        </main>
-
-        <Footer />
-        <FloatingButtons />
-      </div>
-    </>
+      <Footer />
+      <FloatingButtons />
+    </div>
   )
 }
 
 const App = () => {
   return (
     <BrowserRouter>
-     <ScrollToTop />
+      <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   )

@@ -126,7 +126,7 @@ Your gateway to extra-ordinary journeys
           >
             <h4 className="text-lg font-semibold underline text-white mb-5 text-shadow">Get in Touch</h4>
             <ul className="space-y-6 text-white sm:text-base text-shadow">
-              <li>Nairobi, Kenya</li>
+              <li>Nairobi, Spring Court, Watermark Business Park, Ndege Rd Kenya</li>
               <li>
                 <a
                   href="mailto:info@qpsafaris.com"
@@ -140,7 +140,7 @@ Your gateway to extra-ordinary journeys
                   href="tel:+254112770494"
                   className="hover:text-amber-300 transition-colors"
                 >
-                  +254 112 770 494
+                  +254 704 041 059
                 </a>
               </li>
               <li className="flex gap-2">
