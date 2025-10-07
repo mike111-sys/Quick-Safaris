@@ -2,14 +2,15 @@ import { motion } from 'framer-motion'
 import image_1 from '../assets/About Page/image-1.webp'
 import image_2 from '../assets/About Page/image-2.webp'
 import image_3 from '../assets/About Page/image-3.webp'
-import image_4 from '../assets/About Page/image-4.webp'
+import bgImage from '../assets/About Page/image-4.webp'
+import bgImage_blur from '../assets/About Page/image-4-blur.webp'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   const images = [
     { src: image_1, alt: 'African safari landscape' },
     { src: image_2, alt: 'Cultural village experience' },
     { src: image_3, alt: 'Wildlife encounter' },
-    { src: image_4, alt: 'Adventure expedition' },
   ]
 
   return (
@@ -124,56 +125,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Travel With Us Section */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <h2 className="text-3xl font-bold text-gray-900">Why Choose Quickpulse?</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            At Quickpulse Safaris & Travel, we believe travel is more than just a destination—it’s a story, a connection, a moment that stays with you forever. Here’s what sets us apart:
-          </p>
-        </motion.div>
-        <div className="mt-8 grid md:grid-cols-2 gap-6">
-          {[
-            {
-              title: 'Tailor-Made Adventures',
-              desc: 'Your journey, your way. We design every trip to match your pace, style, and budget, ensuring a personalized experience that feels uniquely yours.',
-            },
-            {
-              title: 'Expert Local Guides',
-              desc: 'Our guides are storytellers, conservationists, and locals who bring Africa’s landscapes and cultures to life with passion and expertise.',
-            },
-            {
-              title: 'Sustainable Tourism',
-              desc: 'We’re committed to eco-friendly travel that protects wildlife, preserves natural habitats, and supports the communities we visit.',
-            },
-            {
-              title: 'Seamless Planning',
-              desc: 'From handpicked lodges to flawless logistics, we handle every detail so you can focus on the adventure and make memories that last a lifetime.',
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition"
-            >
-              <h3 className="font-semibold text-lg text-gray-800">{item.title}</h3>
-              <p className="mt-2 text-gray-600">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Our Values Section */}
-      <section className="bg-white py-12">
+           {/* Our Values Section */}
+           <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <motion.div
@@ -217,6 +170,123 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Travel With Us Section */}
+      <section className="relative text-white py-20 overflow-hidden">
+  {/* Background images with blur loading */}
+  <div className="absolute inset-0">
+    {/* Blurred placeholder */}
+    <img
+      src={bgImage_blur}
+      alt="Blurred background placeholder"
+      className="absolute inset-0 w-full h-full object-cover blur-lg scale-105"
+    />
+    {/* Sharp background */}
+    <img
+      src={bgImage}
+      alt="Why Choose Quickpulse background"
+      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+      loading="lazy"
+    />
+    {/* Overlay for readability */}
+    <div className="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  {/* Content */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center"
+    >
+      <h2 className="text-3xl font-bold text-white">Why Choose Quickpulse?</h2>
+      <p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
+        At Quickpulse Safaris & Travel, we believe travel is more than just a destination—it’s a story, 
+        a connection, a moment that stays with you forever. Here’s what sets us apart:
+      </p>
+    </motion.div>
+
+    {/* Features grid */}
+    <div className="mt-10 grid md:grid-cols-2 gap-6">
+      {[
+        {
+          title: 'Tailor-Made Adventures',
+          desc: 'Your journey, your way. We design every trip to match your pace, style, and budget, ensuring a personalized experience that feels uniquely yours.',
+        },
+        {
+          title: 'Expert Local Guides',
+          desc: 'Our guides are storytellers, conservationists, and locals who bring Africa’s landscapes and cultures to life with passion and expertise.',
+        },
+        {
+          title: 'Sustainable Tourism',
+          desc: 'We’re committed to eco-friendly travel that protects wildlife, preserves natural habitats, and supports the communities we visit.',
+        },
+        {
+          title: 'Seamless Planning',
+          desc: 'From handpicked lodges to flawless logistics, we handle every detail so you can focus on the adventure and make memories that last a lifetime.',
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+          className="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-white/20 transition"
+        >
+          <h3 className="font-semibold text-lg text-white">{item.title}</h3>
+          <p className="mt-2 text-gray-200">{item.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* C.T.A */}
+<section className="bg-white py-20 text-center">
+  <div className="max-w-4xl mx-auto px-6">
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+    >
+      Ready to Experience the Magic of Africa?
+    </motion.h2>
+
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+    >
+      Let <span className="font-semibold text-gray-900"> Quickpulse Safaris & Travel </span> 
+      craft your next unforgettable journey, from the golden savannahs to the turquoise 
+      coastlines. Your adventure begins with just one click.
+    </motion.p>
+
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
+      <Link
+        to="/contact"
+        className="inline-block bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-full shadow-md hover:bg-yellow-400 transition"
+      >
+        Plan Your Adventure
+      </Link>
+    </motion.div>
+  </div>
+</section>
+
+
+ 
 
     
     </div>
