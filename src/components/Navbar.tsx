@@ -2,8 +2,8 @@ import { Link, NavLink } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Logo from '../../public/logo.webp'
-import Logo_blur from '../../public/logo-blur.webp'
+import Logo from '/logo.webp'
+import Logo_blur from '/logo-blur.webp'
 
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
   `block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${

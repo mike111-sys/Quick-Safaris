@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
-import logo from '../../public/logo.webp';
-import logo_blur from '../../public/logo-blur.webp';
+import logo from '/logo.webp';
+import logo_blur from '/logo-blur.webp';
 import background_image from '../assets/Destinations/tsavo.webp';
 
 const Footer = () => {
