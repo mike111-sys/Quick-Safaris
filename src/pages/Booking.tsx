@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ScrollToTop from '../components/ScrollToTop'
 
 type FormData = {
   name: string
@@ -26,6 +27,7 @@ const Booking = () => {
 
   return (
     <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+      <ScrollToTop />
       <h1 className="text-3xl font-bold">Request a Custom Quote</h1>
       <p className="mt-3 text-gray-600">Tell us your dream safari. We’ll craft a personalized itinerary and send a quote within 24–48 hours.</p>
 

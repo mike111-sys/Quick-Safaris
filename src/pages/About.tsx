@@ -5,6 +5,7 @@ import image_3 from '../assets/About Page/image-3.webp'
 import bgImage from '../assets/About Page/image-4.webp'
 import bgImage_blur from '../assets/About Page/image-4-blur.webp'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const About = () => {
   const images = [
@@ -15,6 +16,7 @@ const About = () => {
 
   return (
     <div className="bg-gray-50">
+      <ScrollToTop />
       {/* Hero Section */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
@@ -203,7 +205,7 @@ const About = () => {
     >
       <h2 className="text-3xl font-bold text-white">Why Choose Quickpulse?</h2>
       <p className="mt-4 text-lg text-gray-200 max-w-3xl mx-auto">
-        At Quickpulse Safaris & Travel, we believe travel is more than just a destination—it’s a story, 
+        At Quickpulse Safaris & Travel, we believe travel is more than just a destination, it’s a story, 
         a connection, a moment that stays with you forever. Here’s what sets us apart:
       </p>
     </motion.div>

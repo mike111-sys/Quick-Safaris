@@ -21,7 +21,10 @@ const AppContent = () => {
   const [heroLoaded, setHeroLoaded] = useState(false)
   const [isReady, setIsReady] = useState(false)
 
-  // Wait until both are ready
+ // New: route change loader state
+ const [routeLoading, setRouteLoading] = useState(false)
+
+  // First Loader; home
   useEffect(() => {
     if (logoLoaded && heroLoaded && location.pathname === '/') {
       const timer = setTimeout(() => setIsReady(true), 400)
@@ -32,9 +35,24 @@ const AppContent = () => {
     }
   }, [logoLoaded, heroLoaded, location.pathname])
 
+   // Route change loader
+   useEffect(() => {
+    if (isReady) {
+      setRouteLoading(true)
+      const timer = setTimeout(() => setRouteLoading(false), 600) // Loader duration
+      return () => clearTimeout(timer)
+    }
+  }, [location.pathname])
+
   return (
     <>
+    {/* Initial full loader (only on first page load) */}
       <AnimatePresence>{!isReady && <Loader key="loader" />}</AnimatePresence>
+
+        {/* Route change loader */}
+        <AnimatePresence>
+        {isReady && routeLoading && <Loader key="route-loader" />}
+      </AnimatePresence>
 
       <div className={`${isReady ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
         <Navbar onLogoLoaded={() => setLogoLoaded(true)} />

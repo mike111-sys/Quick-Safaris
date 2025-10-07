@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import classic from '../assets/Experiences Page/classic-safari-adventure.webp';
 import wilderness from '../assets/Experiences Page/wilderness-culture.webp';
 import beach from '../assets/Experiences Page/beach-escape.webp';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Experiences = () => {
   const experiences = [
@@ -27,6 +28,7 @@ const Experiences = () => {
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
+      <ScrollToTop />
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
