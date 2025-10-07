@@ -11,7 +11,6 @@ import Experiences from './pages/Experiences'
 import Contact from './pages/Contact'
 import Tours from './pages/Tours'
 import FAQ from './pages/FAQ'
-import Booking from './pages/Booking'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import FloatingButtons from './components/FloatingButtons'
@@ -29,7 +28,7 @@ const AppContent = () => {
   // First Loader; home
   useEffect(() => {
     if (logoLoaded && heroLoaded && location.pathname === '/') {
-      const timer = setTimeout(() => setIsReady(true), 400)
+      const timer = setTimeout(() => setIsReady(true), 700)
       return () => clearTimeout(timer)
     } else if (location.pathname !== '/') {
       // For other pages, load immediately
@@ -41,7 +40,7 @@ const AppContent = () => {
    useEffect(() => {
     if (isReady) {
       setRouteLoading(true)
-      const timer = setTimeout(() => setRouteLoading(false), 600) // Loader duration
+      const timer = setTimeout(() => setRouteLoading(false), 500) // Loader duration
       return () => clearTimeout(timer)
     }
   }, [location.pathname])
@@ -70,7 +69,6 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/tours" element={<Tours />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/booking" element={<Booking />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Routes>

@@ -30,7 +30,7 @@ const FloatingButtons = () => {
             transition={{ duration: 0.4 }}
             className="fixed flex gap-1 md:gap-4 bottom-6 left-1 sm:left-6 z-[999]"
           >
-            <Link to="/booking">
+            <Link to="/tours">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -49,7 +49,7 @@ const FloatingButtons = () => {
                 className="flex cursor-pointer items-center gap-2 bg-cyan-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition"
               >
                 <FaComments />
-                <span>Message</span>
+                <span>Message Us</span>
               </motion.button>
             </Link>
           </motion.div>
