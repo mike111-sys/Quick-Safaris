@@ -15,6 +15,7 @@ import Booking from './pages/Booking'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import FloatingButtons from './components/FloatingButtons'
+import ScrollToTop from './components/ScrollToTop'
 
 const AppContent = () => {
   const location = useLocation()
@@ -55,7 +56,9 @@ const AppContent = () => {
         {isReady && routeLoading && <Loader key="route-loader" />}
       </AnimatePresence>
 
+ 
       <div className={`${isReady ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
+      
         <Navbar onLogoLoaded={() => setLogoLoaded(true)} />
 
         <main className="flex-1">
@@ -83,6 +86,7 @@ const AppContent = () => {
 const App = () => {
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   )

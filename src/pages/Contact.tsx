@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +21,6 @@ const Contact = () => {
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
-      <ScrollToTop />
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -9,7 +9,6 @@ import cultural_tour from '../assets/Destinations/cultural-tours.webp';
 import tsavo from '../assets/Destinations/tsavo.webp';
 import samburu from '../assets/Destinations/samburu.webp';
 import ngorongoro from '../assets/Destinations/ngorongoro.webp';
-import ScrollToTop from '../components/ScrollToTop';
 
 const Destinations = () => {
   const regions = [
@@ -42,7 +41,6 @@ const Destinations = () => {
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
-      <ScrollToTop />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

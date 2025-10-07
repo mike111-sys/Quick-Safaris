@@ -5,7 +5,6 @@ import image_3 from '../assets/About Page/image-3.webp'
 import bgImage from '../assets/About Page/image-4.webp'
 import bgImage_blur from '../assets/About Page/image-4-blur.webp'
 import { Link } from 'react-router-dom'
-import ScrollToTop from '../components/ScrollToTop'
 
 const About = () => {
   const images = [
@@ -16,7 +15,6 @@ const About = () => {
 
   return (
     <div className="bg-gray-50">
-      <ScrollToTop />
       {/* Hero Section */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
