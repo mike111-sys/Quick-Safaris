@@ -14,6 +14,7 @@ import FAQ from './pages/FAQ'
 import Booking from './pages/Booking'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import FloatingButtons from './components/FloatingButtons'
 
 const AppContent = () => {
   const location = useLocation()
@@ -73,6 +74,7 @@ const AppContent = () => {
         </main>
 
         <Footer />
+        <FloatingButtons />
       </div>
     </>
   )
