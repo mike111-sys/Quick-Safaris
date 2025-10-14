@@ -58,7 +58,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
     setFormStatus("idle");
 
     const payload = {
-      access_key: "d79db0c0-5855-4347-8125-4a0639cd300d",
+      access_key: "9d626b45-f38f-46a2-a00a-0e5d95e9ccd1",
       subject: `New Comment on Blog: ${blog?.title}`,
       from_name: "Debtime Blog",
       name: formData.name,
@@ -107,8 +107,8 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 bg-blue-100 rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-blue-600 font-semibold">Loading...</p>
+          <div className="w-16 h-16 bg-yellow-100 rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-yellow-600 font-semibold">Loading...</p>
         </div>
       </div>
     );
@@ -206,7 +206,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
     renderedContent = renderedContent
       .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
       .replace(/\*(.*?)\*/g, '<em class="italic text-gray-800">$1</em>')
-      .replace(/__(.*?)__/g, '<u class="underline decoration-2 decoration-blue-600">$1</u>');
+      .replace(/__(.*?)__/g, '<u class="underline decoration-2 decoration-yellow-600">$1</u>');
 
     return renderedContent;
   };
@@ -252,8 +252,8 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
     <div className="min-h-screen bg-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-24 h-24 bg-blue-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
-        <div className="absolute top-40 left-10 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
+        <div className="absolute top-20 right-10 w-24 h-24 bg-yellow-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
+        <div className="absolute top-40 left-10 w-32 h-32 bg-yellow-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
         <div className="absolute bottom-40 right-20 w-28 h-28 bg-gray-200 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
       </div>
 
@@ -266,7 +266,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             onClick={() => navigate("/blog")}
-            className="group cursor-pointer mb-8 inline-flex items-center gap-2 bg-white border border-gray-200 hover:bg-blue-50 text-blue-600 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+            className="group cursor-pointer mb-8 inline-flex items-center gap-2 bg-white border border-gray-200 hover:bg-yellow-50 text-yellow-600 px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Blogs
@@ -300,12 +300,12 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-600 leading-tight mb-6">
               {blog.title}
             </h1>
 
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-6 py-3 rounded-lg text-sm font-medium border border-blue-200">
-              <Calendar className="w-4 h-4 text-blue-600" />
+            <div className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-6 py-3 rounded-lg text-sm font-medium border border-yellow-200">
+              <Calendar className="w-4 h-4 text-yellow-600" />
               {new Date(blog.created_at).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -338,7 +338,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             {prevBlog ? (
               <button
                 onClick={() => navigate(`/blog/${prevBlog.id}`)}
-                className="group cursor-pointer w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
+                className="group cursor-pointer w-full bg-cyan-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 <span className="truncate">Previous: {prevBlog.title}</span>
@@ -350,7 +350,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             {nextBlog && (
               <button
                 onClick={() => navigate(`/blog/${nextBlog.id}`)}
-                className="group cursor-pointer w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-end"
+                className="group cursor-pointer w-full bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-end"
               >
                 <span className="truncate">Next: {nextBlog.title}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -367,8 +367,8 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             className="bg-white rounded-lg p-8 shadow-md border border-gray-200"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                <MessageCircle className="w-5 h-5 text-yellow-600" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">
                 Share Your Thoughts
@@ -379,7 +379,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-2">
-                    <User className="w-4 h-4 text-blue-600" />
+                    <User className="w-4 h-4 text-yellow-600" />
                     Name
                   </label>
                   <input
@@ -388,14 +388,14 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white"
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-white"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-2">
-                    <Mail className="w-4 h-4 text-blue-600" />
+                    <Mail className="w-4 h-4 text-yellow-600" />
                     Email
                   </label>
                   <input
@@ -404,7 +404,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white"
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-white"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -412,7 +412,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
 
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-2">
-                  <Globe className="w-4 h-4 text-blue-600" />
+                  <Globe className="w-4 h-4 text-yellow-600" />
                   Website (optional)
                 </label>
                 <input
@@ -420,7 +420,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                   name="website"
                   value={formData.website}
                   onChange={handleInputChange}
-                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-white"
                   placeholder="https://yourwebsite.com"
                 />
               </div>
@@ -435,7 +435,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 bg-white resize-none"
+                  className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 bg-white resize-none"
                   placeholder="Share your thoughts about this blog..."
                 />
               </div>
@@ -443,7 +443,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                 <button
                   type="submit"
-                  className="group cursor-pointer w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-center"
+                  className="group cursor-pointer w-full sm:w-auto bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-center"
                 >
                   <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   Submit Comment
@@ -454,7 +454,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center gap-2 text-blue-600 font-medium"
+                    className="flex items-center gap-2 text-yellow-600 font-medium"
                   >
                     <CheckCircle className="w-5 h-5" />
                     Comment submitted successfully!
