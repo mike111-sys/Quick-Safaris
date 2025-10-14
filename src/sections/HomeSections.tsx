@@ -92,7 +92,7 @@ const HomeSections = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="border rounded-lg bg-white shadow-sm hover:shadow-md transition overflow-hidden"
               >
-                <div className="relative aspect-[4/3] w-full">
+                <div className="relative aspect-[5/4] w-full">
                   <img 
                     src={s.imageBlur} 
                     alt={`${s.alt} blurred placeholder`} 
