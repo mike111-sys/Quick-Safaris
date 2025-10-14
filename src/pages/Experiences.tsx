@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
-import classic from '../assets/Experiences Page/classic-safari-adventure.webp';
 import wilderness from '../assets/Experiences Page/wilderness-culture.webp';
 import beach from '../assets/Experiences Page/beach-escape.webp';
+import balloon from '../assets/Experiences Page/balloon-safari.webp';
 
 const Experiences = () => {
   const experiences = [
     {
-      title: 'Classic Safari Adventure (5 Days)',
-      desc: 'Embark on an unforgettable journey through Kenya’s iconic landscapes. Witness the Great Migration in the Maasai Mara, marvel at flamingo-filled Lake Nakuru, and cruise the serene waters of Lake Naivasha. This adventure blends thrilling wildlife encounters with breathtaking scenery, perfect for first-time safari-goers.',
-      img: classic,
-      alt: 'Classic safari adventure in Maasai Mara',
+      title: 'Balloon Safari in Mara, Amboseli & Serengeti',
+      desc: 'Soar above Africa’s most breathtaking landscapes in a hot air balloon at sunrise. Glide silently over the Maasai Mara, Amboseli, and Serengeti as herds of elephants, wildebeests, and zebras roam below — an experience that offers unmatched panoramic views and serenity.',
+      img: balloon,
+      alt: 'Balloon safari over Mara, Amboseli and Serengeti',
     },
     {
       title: 'Wilderness & Culture (7 Days)',
@@ -22,8 +22,8 @@ const Experiences = () => {
       desc: 'Combine the thrill of safari with the tranquility of the coast. Track elephants against the backdrop of Mount Kilimanjaro in Amboseli, explore the vast wilderness of Tsavo, and unwind on the pristine beaches of Zanzibar, where turquoise waters and coral reefs await.',
       img: beach,
       alt: 'Safari and beach escape in Zanzibar',
-    },
-  ];
+    }
+    ];
 
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 bg-gray-50">
