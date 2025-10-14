@@ -14,14 +14,7 @@ import wildlife from '../assets/Home Sections/wildlife.webp'
 import wildlife_blur from '../assets/Home Sections/wildlife-blur.webp'
 import trekking from '../assets/Home Sections/trekking.webp'
 import trekking_blur from '../assets/Home Sections/trekking-blur.webp'
-import tailor_made from '../assets/Home Sections/tailor.webp'
-import tailor_made_blur from '../assets/Home Sections/tailor-blur.webp'
-import eco_friendly from '../assets/Home Sections/eco.webp'
-import eco_friendly_blur from '../assets/Home Sections/eco-blur.webp'
-import expert_guides from '../assets/Home Sections/expert.webp'
-import expert_guides_blur from '../assets/Home Sections/expert-blur.webp'
-import seamless from '../assets/Home Sections/travels.webp'
-import seamless_blur from '../assets/Home Sections/travels-blur.webp'
+import { Compass, Leaf, Plane, MapPin, Building2 } from "lucide-react";
 
 
 const HomeSections = () => {
@@ -124,49 +117,33 @@ const HomeSections = () => {
         </div>
       </section>
 
-     {/* Why Travel Section */}
+    {/* Why Travel Section */}
 <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
   <h2 className="text-2xl md:text-3xl text-center font-bold">Why Travel With Us?</h2>
-  <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
     {[
-      { title: 'Expert Guides', desc: 'Local knowledge, passion, and safety first.', image: expert_guides, blur: expert_guides_blur, alt: 'Expert guides' },
-      { title: 'Eco-Friendly', desc: 'Supporting conservation & communities.', image: eco_friendly, blur: eco_friendly_blur, alt: 'Eco friendly' },
-      { title: 'Seamless Travel', desc: 'We handle everything end-to-end.', image: seamless, blur: seamless_blur, alt: 'Seamless travel' },
-      { title: 'Tailor-Made', desc: 'Every journey fits your style & budget.', image: tailor_made, blur: tailor_made_blur, alt: 'Tailor made' }
-
-    ].map((c, i) => (
-      <motion.div 
-        key={c.title} 
-        initial={{ opacity: 0, scale: 0.9 }} 
-        whileInView={{ opacity: 1, scale: 1 }} 
-        viewport={{ once: true }} 
+      { title: 'Expert Guides', desc: 'Local knowledge, passion, and safety first.', icon: <Compass className="w-12 h-12 text-amber-500 animate-spin-slow" /> },
+      { title: 'Eco-Friendly', desc: 'Supporting conservation & communities.', icon: <Leaf className="w-12 h-12 text-green-600 animate-bounce" /> },
+      { title: 'Seamless Travel', desc: 'We handle everything end-to-end.', icon: <Plane className="w-12 h-12 text-sky-500 animate-float" /> },
+      { title: 'Tailor-Made', desc: 'Every journey fits your style & budget.', icon: <MapPin className="w-12 h-12 text-orange-500 animate-pulse" /> },
+      { title: 'Corporate Travel', desc: 'Professional travel management for your team or business.', icon: <Building2 className="w-12 h-12 text-blue-600 animate-spin-slow" /> },
+    ].map((item, i) => (
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.5, delay: i * 0.1 }}
-        className="border rounded-lg shadow-sm hover:shadow-md transition overflow-hidden"
+        className="border rounded-lg shadow-sm hover:shadow-lg transition-all bg-white p-6 flex flex-col items-center text-center hover:-translate-y-1"
       >
-        {/* Image */}
-        <div className="relative aspect-[4/3] w-full">
-          <img 
-            src={c.blur} 
-            alt={`${c.alt} blurred`} 
-            className="absolute inset-0 w-full h-full object-cover blur-lg scale-105"
-          />
-          <img 
-            src={c.image} 
-            alt={c.alt} 
-            className="relative w-full h-full object-cover transition-opacity duration-700"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Text */}
-        <div className="p-6">
-          <div className="font-semibold">{c.title}</div>
-          <p className="mt-2 text-gray-600">{c.desc}</p>
-        </div>
+        <div className="mb-4">{item.icon}</div>
+        <h3 className="font-semibold text-lg">{item.title}</h3>
+        <p className="mt-2 text-gray-600">{item.desc}</p>
       </motion.div>
     ))}
   </div>
 </section>
+
     </div>
   )
 }
