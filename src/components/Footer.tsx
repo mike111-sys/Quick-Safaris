@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaX } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import logo from '/logo.webp';
 import logo_blur from '/logo-blur.webp';
@@ -55,9 +55,9 @@ Your gateway to extra-ordinary journeys
             </p>
             <div className="flex items-center gap-4 mt-6">
               {[
-                { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram' },
-                { icon: FaFacebookF, href: 'https://facebook.com', label: 'Facebook' },
-                { icon: FaTiktok, href: 'https://tiktok.com', label: 'TikTok' },
+                { icon: FaInstagram, href: 'https://www.instagram.com/quickpulse_safaris', label: 'Instagram' },
+                { icon: FaFacebookF, href: 'https://www.facebook.com/QuickpulseSafaris', label: 'Facebook' },
+                { icon: FaX, href: 'https://x.com/qp_safaris', label: 'TikTok' },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
