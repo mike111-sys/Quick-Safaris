@@ -103,13 +103,7 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
             >
               <NavLink to="/experiences" className={desktopNavItemClass}>Experiences</NavLink>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <NavLink to="/tours" className={desktopNavItemClass}>Book A Tour</NavLink>
-            </motion.div>
+            
            
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -117,6 +111,13 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <NavLink to="/faq" className={desktopNavItemClass}>FAQs</NavLink>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <NavLink to="/testimonials" className={desktopNavItemClass}>Testimonials</NavLink>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -192,15 +193,7 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
                   Experiences
                 </NavLink>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-              >
-                <NavLink onClick={() => setOpen(false)} to="/tours" className={navItemClass}>
-                 Book A Tour
-                </NavLink>
-              </motion.div>
+             
              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -209,6 +202,15 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               >
                 <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
                   FAQs
+                </NavLink>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
+              >
+                <NavLink onClick={() => setOpen(false)} to="/testimonials" className={navItemClass}>
+                 Testimonials
                 </NavLink>
               </motion.div>
               <motion.div

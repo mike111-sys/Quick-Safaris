@@ -14,6 +14,9 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import FloatingButtons from "./components/FloatingButtons";
 import ScrollToTop from "./components/ScrollToTop";
+import Testimonials from "./pages/Testimonials";
+import Blog from "./pages/blog/Blog";
+import Admin from "./pages/Admin/pages/Admin";
 
 const AppContent = () => {
   const location = useLocation();
@@ -74,6 +77,10 @@ const AppContent = () => {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/admin/*" element={<Admin />} />
         </Routes>
       </main>
 
