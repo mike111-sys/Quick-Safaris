@@ -61,7 +61,7 @@ const HomeSections = () => {
             whileInView={{ opacity: 1, y: 0 }} 
             viewport={{ once: true }} 
             transition={{ duration: 0.7, delay: 0.2 }} 
-            className="aspect-video rounded-lg overflow-hidden relative"
+            className="aspect-[3/2] rounded-lg overflow-hidden relative"
           >
             <img 
               src={image_blur} 
