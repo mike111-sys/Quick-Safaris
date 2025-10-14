@@ -49,7 +49,7 @@ const BlogSection: React.FC = () => {
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <div className="absolute top-20 right-10 w-24 h-24 bg-amber-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
-        <div className="absolute top-40 left-10 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
+        <div className="absolute top-40 left-10 w-32 h-32 bg-yellow-100 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
         <div className="absolute bottom-40 right-20 w-28 h-28 bg-gray-200 rounded-full mix-blend-multiply blur-xl opacity-70 animate-pulse"></div>
       </div>
 
@@ -69,7 +69,7 @@ const BlogSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold text-blue-600"
+            className="text-3xl md:text-4xl font-bold text-yellow-600"
           >
             Latest Blog Posts
           </motion.h2>
@@ -82,7 +82,7 @@ const BlogSection: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="mt-4 text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto"
           >
-            Explore expert insights on debt management, financial recovery, and sustainable business practices.
+Explore expert insights on travel, adventure, and unforgettable safari experiences.
           </motion.p>
         </motion.div>
 
@@ -114,7 +114,7 @@ const BlogSection: React.FC = () => {
                         if (parent) {
                           const placeholder = document.createElement('div');
                           placeholder.className =
-                            'w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg flex-col text-blue-600 font-medium';
+                            'w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg flex-col text-yellow-600 font-medium';
                           placeholder.innerHTML = `
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM6.5 17.5l3.5-4.5 2.5 3.01L16.5 11l4.5 6.5H6.5z"/>
@@ -126,7 +126,7 @@ const BlogSection: React.FC = () => {
                       }}
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg flex-col text-blue-600 font-medium">
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-t-lg flex-col text-yellow-600 font-medium">
                       <BookOpen className="w-6 h-6" />
                       <span className="mt-1 text-xs">Blog Image N/A</span>
                     </div>
@@ -139,7 +139,7 @@ const BlogSection: React.FC = () => {
                     {blog.title}
                   </h3>
                   <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <Calendar className="w-4 h-4 text-blue-600" />
+                    <Calendar className="w-4 h-4 text-yellow-600" />
                     <span>
                       {new Date(blog.created_at).toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -149,13 +149,13 @@ const BlogSection: React.FC = () => {
                     </span>
                   </div>
                   <div className="flex items-center justify-between mt-auto">
-                    <span className="text-sm font-medium text-blue-600">Read More</span>
+                    <span className="text-sm font-medium text-yellow-600">Read More</span>
                     <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
-                      <ArrowRight className="w-4 h-4 text-blue-600" />
+                      <ArrowRight className="w-4 h-4 text-yellow-600" />
                     </div>
                   </div>
                 </div>
-                <div className="h-1 bg-blue-600"></div>
+                <div className="h-1 bg-yellow-600"></div>
               </motion.div>
             ))}
           </div>
@@ -169,13 +169,13 @@ const BlogSection: React.FC = () => {
           >
             <div className="bg-white rounded-lg p-8 max-w-md mx-auto border border-gray-200 shadow-md">
               <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-8 h-8 text-blue-600" />
+                <BookOpen className="w-8 h-8 text-yellow-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Coming Soon!</h3>
               <p className="text-gray-600 text-base leading-relaxed">
                 Exciting blogs about debt management and financial recovery are being crafted for you.
               </p>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-blue-600 font-medium text-sm">
+              <div className="mt-4 inline-flex items-center gap-1.5 text-yellow-600 font-medium text-sm">
                 <Sparkles className="w-3 h-3" />
                 Stay tuned for insightful content
               </div>
