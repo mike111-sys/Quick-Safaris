@@ -26,6 +26,8 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
   const Navbar: React.FC<NavbarProps> = ({ onLogoLoaded }) => {
  const [open, setOpen] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+  const [showResources, setShowResources] = useState(false)
+
   
 
   return (
@@ -105,13 +107,73 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
             </motion.div>
             
            
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-            >
-              <NavLink to="/faq" className={desktopNavItemClass}>FAQs</NavLink>
-            </motion.div>
+           {/* Resource Hub Dropdown */}
+<div 
+  className="relative"
+  onMouseEnter={() => setShowResources(true)} 
+  onMouseLeave={() => setShowResources(false)}
+>
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.7 }}
+  >
+    <button
+      className="px-4 py-2.5 rounded-xl text-nowrap text-sm font-semibold transition-all duration-300 text-gray-700 hover:text-gray-900 hover:bg-gray-50/80 hover:shadow-sm flex items-center gap-1"
+    >
+      Resource Hub
+      <svg
+        className={`w-4 h-4 transition-transform duration-300 ${
+          showResources ? 'rotate-180' : ''
+        }`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  </motion.div>
+
+  <AnimatePresence>
+    {showResources && (
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.2 }}
+        className="absolute left-0 mt-2 w-44 bg-white border border-gray-200 rounded-xl shadow-lg z-40"
+      >
+        <NavLink
+          to="/blog"
+          className={({ isActive }) =>
+            `block px-4 py-2 text-sm rounded-t-xl transition-all ${
+              isActive
+                ? 'bg-emerald-50 text-emerald-700 font-semibold'
+                : 'text-gray-700 hover:bg-gray-50'
+            }`
+          }
+        >
+          Blogs
+        </NavLink>
+        <NavLink
+          to="/faq"
+          className={({ isActive }) =>
+            `block px-4 py-2 text-sm rounded-b-xl transition-all ${
+              isActive
+                ? 'bg-emerald-50 text-emerald-700 font-semibold'
+                : 'text-gray-700 hover:bg-gray-50'
+            }`
+          }
+        >
+          FAQs
+        </NavLink>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -195,15 +257,36 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               </motion.div>
              
              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.7 }}
-              >
-                <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
-                  FAQs
-                </NavLink>
-              </motion.div>
+             {/* Resource Hub (Mobile Dropdown) */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3, delay: 0.7 }}
+>
+  <details className="group">
+    <summary className="flex justify-between items-center cursor-pointer px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50/80">
+      Resource Hub
+      <svg
+        className="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+    <div className="pl-6 space-y-1">
+      <NavLink onClick={() => setOpen(false)} to="/blog" className={navItemClass}>
+        Blogs
+      </NavLink>
+      <NavLink onClick={() => setOpen(false)} to="/faq" className={navItemClass}>
+        FAQs
+      </NavLink>
+    </div>
+  </details>
+</motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
