@@ -12,14 +12,14 @@ interface NavbarProps {
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
   `block px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
     isActive 
-      ? 'text-gray-900 bg-gradient-to-r from-emerald-50 to-cyan-50 shadow-sm border border-emerald-200/50' 
+      ? 'text-gray-900 bg-gradient-to-r from-emerald-50 to-green-50 shadow-sm border border-emerald-200/50' 
       : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50/80'
   }`
 
 const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
   `px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
     isActive 
-      ? 'text-gray-900 bg-gradient-to-r from-emerald-50 to-cyan-50 shadow-sm border border-emerald-200/50' 
+      ? 'text-gray-900 bg-gradient-to-r from-emerald-50 to-green-50 shadow-sm border border-emerald-200/50' 
       : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50/80 hover:shadow-sm'
   }`
 
@@ -65,7 +65,7 @@ const desktopNavItemClass = ({ isActive }: { isActive: boolean }) =>
               </div>
               
               <div className="leading-tight">
-                <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-amber-600 to-cyan-600 bg-clip-text text-transparent">
+                <div className="text-sm sm:text-base font-bold tracking-tight bg-gradient-to-r from-amber-600 to-green-600 bg-clip-text text-transparent">
                   Quickpulse Safaris
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-gray-700 font-medium tracking-wide">

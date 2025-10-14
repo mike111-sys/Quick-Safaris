@@ -46,7 +46,7 @@ const FloatingButtons = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex cursor-pointer items-center gap-2 bg-cyan-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-cyan-600 transition"
+                className="flex cursor-pointer items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition"
               >
                 <FaComments />
                 <span>Message Us</span>
@@ -67,7 +67,7 @@ const FloatingButtons = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
-              className="flex items-center cursor-pointer justify-center bg-yellow-400 text-white w-10 h-10 rounded-full shadow-lg hover:bg-yellow-500 transition"
+              className="flex items-center cursor-pointer justify-center bg-amber-500 text-white w-10 h-10 rounded-full shadow-lg hover:bg-yellow-500 transition"
             >
               <FaArrowUp />
             </motion.button>
