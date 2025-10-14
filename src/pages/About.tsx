@@ -276,7 +276,7 @@ const About = () => {
       transition={{ duration: 0.5, delay: 0.4 }}
     >
       <Link
-        to="/contact"
+        to="/tours"
         className="inline-block bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-full shadow-md hover:bg-yellow-400 transition"
       >
         Plan Your Adventure
