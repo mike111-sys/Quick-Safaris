@@ -22,9 +22,10 @@ interface HeroProps {
 
 const BACKGROUND_IMAGES: Image[] = [
   { full: background_1, blur: background_1_blur }, // Amboseli
-  { full: background_2, blur: background_2_blur }, // Maasai Mara
-  { full: background_3, blur: background_3_blur }, // Serengeti
   { full: background_4, blur: background_4_blur }, // Zanzibar
+  { full: background_3, blur: background_3_blur }, // Serengeti
+  { full: background_2, blur: background_2_blur }, // Maasai Mara
+
 ]
 
 const useNextImagePreload = (images: Image[], index: number) => {
