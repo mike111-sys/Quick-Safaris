@@ -13,21 +13,21 @@ const ChangePasswordForm: React.FC<Props> = ({ changePw, setChangePw, handleChan
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   return (
-    <div className="w-full max-w-md mx-auto p-8 bg-white rounded-2xl shadow-2xl border border-blue-100">
+    <div className="w-full max-w-md mx-auto p-8 bg-white rounded-2xl shadow-2xl border border-yellow-100">
       {/* Header */}
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mb-4 shadow-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full mb-4 shadow-lg">
           <Lock className="w-8 h-8 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-blue-900 mb-2">Change Password</h3>
-        <p className="text-blue-600 text-sm">Update your password to keep your account secure</p>
+        <h3 className="text-2xl font-bold text-yellow-900 mb-2">Change Password</h3>
+        <p className="text-yellow-600 text-sm">Update your password to keep your account secure</p>
       </div>
 
       {/* Form */}
       <div className="space-y-6">
         {/* Old Password Field */}
         <div className="relative">
-          <label className="block text-sm font-medium text-blue-900 mb-2">
+          <label className="block text-sm font-medium text-yellow-900 mb-2">
             Current Password
           </label>
           <div className="relative">
@@ -39,16 +39,16 @@ const ChangePasswordForm: React.FC<Props> = ({ changePw, setChangePw, handleChan
               onFocus={() => setFocusedField('oldPassword')}
               onBlur={() => setFocusedField(null)}
               required
-              className={`w-full px-4 py-3 pr-12 bg-white border-2 rounded-xl text-blue-900 placeholder-blue-400 transition-all duration-300 focus:outline-none ${
+              className={`w-full px-4 py-3 pr-12 bg-white border-2 rounded-xl text-yellow-900 placeholder-yellow-400 transition-all duration-300 focus:outline-none ${
                 focusedField === 'oldPassword'
-                  ? 'border-blue-500 shadow-lg shadow-blue-200/50 bg-blue-50/30'
-                  : 'border-blue-200 hover:border-blue-300'
+                  ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 bg-yellow-50/30'
+                  : 'border-yellow-200 hover:border-yellow-300'
               }`}
             />
             <button
               type="button"
               onClick={() => setShowOldPassword(!showOldPassword)}
-              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-blue-400 hover:text-blue-600 transition-colors duration-200"
+              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-yellow-400 hover:text-yellow-600 transition-colors duration-200"
             >
               {showOldPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>
@@ -57,7 +57,7 @@ const ChangePasswordForm: React.FC<Props> = ({ changePw, setChangePw, handleChan
 
         {/* New Password Field */}
         <div className="relative">
-          <label className="block text-sm font-medium text-blue-900 mb-2">
+          <label className="block text-sm font-medium text-yellow-900 mb-2">
             New Password
           </label>
           <div className="relative">
@@ -69,16 +69,16 @@ const ChangePasswordForm: React.FC<Props> = ({ changePw, setChangePw, handleChan
               onFocus={() => setFocusedField('newPassword')}
               onBlur={() => setFocusedField(null)}
               required
-              className={`w-full px-4 py-3 pr-12 bg-white border-2 rounded-xl text-blue-900 placeholder-blue-400 transition-all duration-300 focus:outline-none ${
+              className={`w-full px-4 py-3 pr-12 bg-white border-2 rounded-xl text-yellow-900 placeholder-yellow-400 transition-all duration-300 focus:outline-none ${
                 focusedField === 'newPassword'
-                  ? 'border-blue-500 shadow-lg shadow-blue-200/50 bg-blue-50/30'
-                  : 'border-blue-200 hover:border-blue-300'
+                  ? 'border-yellow-500 shadow-lg shadow-yellow-200/50 bg-yellow-50/30'
+                  : 'border-yellow-200 hover:border-yellow-300'
               }`}
             />
             <button
               type="button"
               onClick={() => setShowNewPassword(!showNewPassword)}
-              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-blue-400 hover:text-blue-600 transition-colors duration-200"
+              className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-yellow-400 hover:text-yellow-600 transition-colors duration-200"
             >
               {showNewPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
             </button>
@@ -89,14 +89,14 @@ const ChangePasswordForm: React.FC<Props> = ({ changePw, setChangePw, handleChan
         <button
           type="button"
           onClick={handleChangePassword}
-          className="w-full bg-gradient-to-r cursor-pointer from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-600 hover:to-blue-700 focus:from-blue-600 focus:to-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl"
+          className="w-full bg-gradient-to-r cursor-pointer from-yellow-500 to-yellow-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-yellow-600 hover:to-yellow-700 focus:from-yellow-600 focus:to-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-200 transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl"
         >
           Update Password
         </button>
 
         {/* Security Note */}
         <div className="text-center">
-          <p className="text-xs text-blue-500 bg-blue-50 px-4 py-2 rounded-lg">
+          <p className="text-xs text-yellow-500 bg-yellow-50 px-4 py-2 rounded-lg">
             🔒 Your password will be encrypted and stored securely
           </p>
         </div>

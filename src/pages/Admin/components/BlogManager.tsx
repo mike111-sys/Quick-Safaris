@@ -232,16 +232,16 @@ const BlogManager: React.FC<Props> = ({
     <div className="bg-white p-6 rounded-lg shadow-lg">
        {/* Header */}
        <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mb-4 shadow-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full mb-4 shadow-lg">
           <FaBlog className="w-8 h-8 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-blue-900 mb-2">Manage Blogs</h3>
+        <h3 className="text-2xl font-bold text-yellow-900 mb-2">Manage Blogs</h3>
       </div>
 
       {/* Add/Edit Blog Form */}
       <form id="blog-form" onSubmit={handleSubmit} className="space-y-6 mb-8">
         <div className="flex justify-between items-center">
-          <h4 className="text-xl font-semibold text-blue-400">
+          <h4 className="text-xl font-semibold text-yellow-400">
             {editingBlog ? `Edit Blog: ${editingBlog.title}` : 'Add New Blog'}
           </h4>
           {editingBlog && (
@@ -262,7 +262,7 @@ const BlogManager: React.FC<Props> = ({
             placeholder="Enter blog title"
             value={newBlog.title}
             onChange={e => setNewBlog({ ...newBlog, title: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
             required
           />
         </div>
@@ -273,7 +273,7 @@ const BlogManager: React.FC<Props> = ({
             type="file"
             accept="image/*"
             onChange={handleCoverImageChange}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
           />
           {newBlog.cover_image && (
             <p className="text-sm text-green-600 mt-1">✓ New cover image selected: {newBlog.cover_image.name}</p>
@@ -298,21 +298,21 @@ const BlogManager: React.FC<Props> = ({
             <button
               type="button"
               onClick={() => formatText('bold')}
-              className="px-3 cursor-pointer py-1 bg-blue-200 text-blue-700 rounded hover:bg-blue-300 transition-colors font-bold"
+              className="px-3 cursor-pointer py-1 bg-yellow-200 text-yellow-700 rounded hover:bg-yellow-300 transition-colors font-bold"
             >
               Bold
             </button>
             <button
               type="button"
               onClick={() => formatText('italic')}
-              className="px-3 cursor-pointer py-1 bg-blue-200 text-blue-700 rounded hover:bg-blue-300 transition-colors italic"
+              className="px-3 cursor-pointer py-1 bg-yellow-200 text-yellow-700 rounded hover:bg-yellow-300 transition-colors italic"
             >
               Italic
             </button>
             <button
               type="button"
               onClick={() => formatText('underline')}
-              className="px-3 py-1 cursor-pointer bg-blue-200 text-blue-700 rounded hover:bg-blue-300 transition-colors underline"
+              className="px-3 py-1 cursor-pointer bg-yellow-200 text-yellow-700 rounded hover:bg-yellow-300 transition-colors underline"
             >
               Underline
             </button>
@@ -340,7 +340,7 @@ const BlogManager: React.FC<Props> = ({
             />
           </div>
           {imageUploadProgress && (
-            <p className="text-sm text-blue-600 mb-2">{imageUploadProgress}</p>
+            <p className="text-sm text-yellow-600 mb-2">{imageUploadProgress}</p>
           )}
           
           {/* Available Images for Insertion */}
@@ -359,7 +359,7 @@ const BlogManager: React.FC<Props> = ({
                       loading='lazy'
                       src={`${API}/api/uploads/blog-images/${imageName}`}
                       alt={`Image ${index + 1}`}
-                      className="w-16 h-16 object-cover rounded border-2 border-transparent group-hover:border-blue-500 transition-colors"
+                      className="w-16 h-16 object-cover rounded border-2 border-transparent group-hover:border-yellow-500 transition-colors"
                     />
                     <div className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600"
                          onClick={(e) => { e.stopPropagation(); removeContentImage(index); }}>
@@ -376,7 +376,7 @@ const BlogManager: React.FC<Props> = ({
             placeholder="Write your blog content here... Use the buttons above to add paragraphs, format text, and insert images. Formatting: **bold**, *italic*, __underline__. Images will be inserted as [IMAGE:filename] placeholders."
             value={newBlog.content}
             onChange={e => setNewBlog({ ...newBlog, content: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent h-64 resize-y"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent h-64 resize-y"
             required
           />
         </div>
@@ -408,7 +408,7 @@ const BlogManager: React.FC<Props> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full cursor-pointer bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+          className="w-full cursor-pointer bg-yellow-600 text-white py-3 px-6 rounded-lg hover:bg-yellow-700 transition-colors font-medium disabled:opacity-50"
         >
           {isSubmitting ? 'Submitting...' : editingBlog ? 'Update Blog' : 'Add Blog'}
         </button>
@@ -439,7 +439,7 @@ const BlogManager: React.FC<Props> = ({
               <div className="flex gap-2">
                 <button
                   onClick={() => handleEditClick(blog)}
-                  className="px-4 cursor-pointer py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                  className="px-4 cursor-pointer py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700 transition-colors"
                 >
                   Edit
                 </button>

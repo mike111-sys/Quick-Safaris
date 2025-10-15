@@ -258,7 +258,7 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-yellow-50 to-indigo-50">
       <Toaster position="top-right" reverseOrder={false} />
       
       {/* Sticky Header */}
@@ -273,12 +273,12 @@ const Admin: React.FC = () => {
               <motion.div 
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg"
+                className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg"
               >
                 <FaChartLine className="w-6 h-6 text-white" />
               </motion.div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-indigo-600 bg-clip-text text-transparent">
                   Admin Dashboard
                 </h1>
                 <p className="text-sm text-gray-500">Manage your content efficiently</p>
@@ -310,7 +310,7 @@ const Admin: React.FC = () => {
           >
             <motion.div 
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-xl"
+              className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-6 text-white shadow-xl"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
@@ -318,7 +318,7 @@ const Admin: React.FC = () => {
                 </div>
                 <span className="text-4xl font-bold">{blogs.length}</span>
               </div>
-              <p className="text-blue-100 font-medium text-lg">Total Blogs</p>
+              <p className="text-yellow-100 font-medium text-lg">Total Blogs</p>
             </motion.div>
 
             <motion.div 
@@ -362,7 +362,7 @@ const Admin: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setShowPasswordForm(prev => !prev)}
-                className="w-full px-6 py-3.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full px-6 py-3.5 bg-gradient-to-r from-yellow-500 to-indigo-600 text-white rounded-xl hover:from-yellow-600 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2 cursor-pointer"
               >
                 <FaKey className="w-4 h-4" />
                 {showPasswordForm ? 'Hide Password Form' : 'Change Password'}
@@ -432,7 +432,7 @@ const Admin: React.FC = () => {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5 }}
-        className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white p-4 rounded-full shadow-2xl transition-all duration-200 cursor-pointer z-40"
+        className="fixed bottom-8 right-8 bg-gradient-to-r from-yellow-500 to-indigo-600 hover:from-yellow-600 hover:to-indigo-700 text-white p-4 rounded-full shadow-2xl transition-all duration-200 cursor-pointer z-40"
         aria-label="Scroll to top"
       >
         <FaChevronUp className="h-5 w-5" />

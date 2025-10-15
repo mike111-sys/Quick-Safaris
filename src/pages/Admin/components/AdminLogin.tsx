@@ -70,7 +70,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
           <button
             type="button"
             onClick={() => navigate("/")}
-            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-lg font-semibold bg-gradient-to-r from-yellow-600 to-yellow-700 text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-yellow-300"
           >
             <FiArrowLeft size={20} />
             Back to Home
@@ -80,7 +80,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
           <div className="p-8 bg-white rounded-2xl shadow-lg border border-gray-200">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-yellow-500 rounded-full mb-4 shadow-md">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-500 rounded-full mb-4 shadow-md">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-3xl font-extrabold text-gray-900">Admin Login</h2>
@@ -96,7 +96,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
-                    <User className="w-5 h-5 text-blue-500" />
+                    <User className="w-5 h-5 text-yellow-500" />
                   </div>
                   <input
                     type="text"
@@ -106,10 +106,10 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
                     onFocus={() => setFocusedField('username')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className={`w-full pl-12 pr-4 py-3 bg-gray-50 border rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    className={`w-full pl-12 pr-4 py-3 bg-gray-50 border rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 ${
                       focusedField === 'username'
-                        ? 'border-blue-500 bg-blue-50/50 shadow-sm'
-                        : 'border-gray-300 hover:border-blue-400'
+                        ? 'border-yellow-500 bg-yellow-50/50 shadow-sm'
+                        : 'border-gray-300 hover:border-yellow-400'
                     }`}
                   />
                 </div>
@@ -122,7 +122,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
                 </label>
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
-                    <Lock className="w-5 h-5 text-blue-500" />
+                    <Lock className="w-5 h-5 text-yellow-500" />
                   </div>
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -132,16 +132,16 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
                     onFocus={() => setFocusedField('password')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className={`w-full pl-12 pr-12 py-3 bg-gray-50 border rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    className={`w-full pl-12 pr-12 py-3 bg-gray-50 border rounded-lg text-gray-900 placeholder-gray-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 ${
                       focusedField === 'password'
-                        ? 'border-blue-500 bg-blue-50/50 shadow-sm'
-                        : 'border-gray-300 hover:border-blue-400'
+                        ? 'border-yellow-500 bg-yellow-50/50 shadow-sm'
+                        : 'border-gray-300 hover:border-yellow-400'
                     }`}
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 transition-colors duration-200"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500 hover:text-yellow-700 transition-colors duration-200"
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -153,10 +153,10 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting || !loginData.username || !loginData.password}
-                className={`w-full py-3 cursor-pointer px-6 rounded-lg font-semibold text-white transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-blue-300 ${
+                className={`w-full py-3 cursor-pointer px-6 rounded-lg font-semibold text-white transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-yellow-300 ${
                   isSubmitting || !loginData.username || !loginData.password
-                    ? 'bg-blue-300 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg'
+                    ? 'bg-yellow-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg'
                 }`}
               >
                 {isSubmitting ? (
@@ -199,7 +199,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ loginData, setLoginData, handle
 
               {/* Security Note */}
               <div className="text-center">
-                <p className="text-xs text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">
+                <p className="text-xs text-yellow-600 bg-yellow-50 px-4 py-2 rounded-lg">
                   🔒 Your credentials are encrypted and secure
                 </p>
               </div>

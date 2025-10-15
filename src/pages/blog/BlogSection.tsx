@@ -173,7 +173,7 @@ Explore expert insights on travel, adventure, and unforgettable safari experienc
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Coming Soon!</h3>
               <p className="text-gray-600 text-base leading-relaxed">
-                Exciting blogs about debt management and financial recovery are being crafted for you.
+                Exciting blogs about Safaris and Adventures crafted for you.
               </p>
               <div className="mt-4 inline-flex items-center gap-1.5 text-yellow-600 font-medium text-sm">
                 <Sparkles className="w-3 h-3" />
