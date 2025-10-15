@@ -19,13 +19,50 @@ import { Compass, Leaf, Plane, MapPin} from "lucide-react";
 
 const HomeSections = () => {
   const services = [
-    { name: 'Wildlife Safaris', image: wildlife, imageBlur: wildlife_blur, alt: 'Wildlife safari' },
-    { name: 'Cultural & Community Tours', image: cultural, imageBlur: cultural_blur, alt: 'Cultural tour' },
-    { name: 'Travel Logistics', image: adventure, imageBlur: adventure_blur, alt: 'Travel logistics' },
-    { name: 'Corporate Travel', image: trekking, imageBlur: trekking_blur, alt: 'Adventure trekking' },
-    { name: 'Luxury & Mid-Range Packages', image: luxury, imageBlur: luxury_blur, alt: 'Luxury travel' },
-    { name: 'Beach Escapes', image: beach, imageBlur: beach_blur, alt: 'Beach escape' }
+    { 
+      name: 'Wildlife Safaris', 
+      image: wildlife, 
+      imageBlur: wildlife_blur, 
+      alt: 'Wildlife safari',
+      desc: 'Experience close encounters with Africa’s majestic wildlife guided by expert rangers.' 
+    },
+    { 
+      name: 'Cultural & Community Tours', 
+      image: cultural, 
+      imageBlur: cultural_blur, 
+      alt: 'Cultural tour',
+      desc: 'Immerse yourself in local traditions, communities, and cultural experiences.' 
+    },
+    { 
+      name: 'Travel Logistics', 
+      image: adventure, 
+      imageBlur: adventure_blur, 
+      alt: 'Travel logistics',
+      desc: 'We handle transport, accommodations, and itineraries for a smooth journey.' 
+    },
+    { 
+      name: 'Corporate Travel', 
+      image: trekking, 
+      imageBlur: trekking_blur, 
+      alt: 'Adventure trekking',
+      desc: 'Tailored business trips and team-building adventures that meet corporate needs.' 
+    },
+    { 
+      name: 'Luxury & Mid-Range Packages', 
+      image: luxury, 
+      imageBlur: luxury_blur, 
+      alt: 'Luxury travel',
+      desc: 'Indulge in premium accommodations or budget-friendly options without compromise.' 
+    },
+    { 
+      name: 'Beach Escapes', 
+      image: beach, 
+      imageBlur: beach_blur, 
+      alt: 'Beach escape',
+      desc: 'Relax on pristine beaches, enjoy water sports, and unwind in paradise.' 
+    }
   ]
+  
 
   
 
@@ -108,8 +145,8 @@ const HomeSections = () => {
                 <div className="p-6">
                   <div className="font-semibold">{s.name}</div>
                   <p className="mt-2 text-gray-600">
-                    Tailored to your style and budget with expert guides and seamless planning.
-                  </p>
+                  {s.desc}
+               </p>
                 </div>
               </motion.div>
             ))}
