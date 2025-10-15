@@ -14,7 +14,7 @@ import wildlife from '../assets/Home Sections/wildlife.webp'
 import wildlife_blur from '../assets/Home Sections/wildlife-blur.webp'
 import trekking from '../assets/Home Sections/trekking.webp'
 import trekking_blur from '../assets/Home Sections/trekking-blur.webp'
-import { Compass, Leaf, Plane, MapPin, Building2 } from "lucide-react";
+import { Compass, Leaf, Plane, MapPin} from "lucide-react";
 
 
 const HomeSections = () => {
@@ -22,7 +22,7 @@ const HomeSections = () => {
     { name: 'Wildlife Safaris', image: wildlife, imageBlur: wildlife_blur, alt: 'Wildlife safari' },
     { name: 'Cultural & Community Tours', image: cultural, imageBlur: cultural_blur, alt: 'Cultural tour' },
     { name: 'Travel Logistics', image: adventure, imageBlur: adventure_blur, alt: 'Travel logistics' },
-    { name: 'Trekking & Adventure', image: trekking, imageBlur: trekking_blur, alt: 'Adventure trekking' },
+    { name: 'Corporate Travel', image: trekking, imageBlur: trekking_blur, alt: 'Adventure trekking' },
     { name: 'Luxury & Mid-Range Packages', image: luxury, imageBlur: luxury_blur, alt: 'Luxury travel' },
     { name: 'Beach Escapes', image: beach, imageBlur: beach_blur, alt: 'Beach escape' }
   ]
@@ -120,13 +120,12 @@ const HomeSections = () => {
     {/* Why Travel Section */}
 <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
   <h2 className="text-2xl md:text-3xl text-center font-bold">Why Travel With Us?</h2>
-  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {[
       { title: 'Expert Guides', desc: 'Local knowledge, passion, and safety first.', icon: <Compass className="w-12 h-12 text-amber-500 animate-spin-slow" /> },
       { title: 'Eco-Friendly', desc: 'Supporting conservation & communities.', icon: <Leaf className="w-12 h-12 text-green-600 animate-bounce" /> },
       { title: 'Seamless Travel', desc: 'We handle everything end-to-end.', icon: <Plane className="w-12 h-12 text-sky-500 animate-float" /> },
       { title: 'Tailor-Made', desc: 'Every journey fits your style & budget.', icon: <MapPin className="w-12 h-12 text-orange-500 animate-pulse" /> },
-      { title: 'Corporate Travel', desc: 'Professional travel management for your team or business.', icon: <Building2 className="w-12 h-12 text-blue-600 animate-spin-slow" /> },
     ].map((item, i) => (
       <motion.div
         key={item.title}
