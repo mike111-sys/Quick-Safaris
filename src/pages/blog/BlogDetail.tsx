@@ -338,7 +338,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
             {prevBlog ? (
               <button
                 onClick={() => navigate(`/blog/${prevBlog.id}`)}
-                className="group cursor-pointer w-full bg-green-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
+                className="group cursor-pointer w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 <span className="truncate">Previous: {prevBlog.title}</span>

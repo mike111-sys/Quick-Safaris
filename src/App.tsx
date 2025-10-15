@@ -64,28 +64,36 @@ const AppContent = () => {
         isReady ? "opacity-100" : "opacity-0"
       } transition-opacity duration-700`}
     >
-      <Navbar onLogoLoaded={() => setLogoLoaded(true)} />
+    {/* Show Navbar and Footer only if not in /admin route */}
+{!location.pathname.startsWith("/admin") && (
+  <Navbar onLogoLoaded={() => setLogoLoaded(true)} />
+)}
 
-      <main className="flex-1">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home onHeroLoaded={() => setHeroLoaded(true)} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/tours" element={<Tours />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-            <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} />
-          <Route path="/admin/*" element={<Admin />} />
-        </Routes>
-      </main>
+<main className="flex-1">
+  <Routes location={location} key={location.pathname}>
+    <Route path="/" element={<Home onHeroLoaded={() => setHeroLoaded(true)} />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/destinations" element={<Destinations />} />
+    <Route path="/experiences" element={<Experiences />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/tours" element={<Tours />} />
+    <Route path="/faq" element={<FAQ />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/terms" element={<Terms />} />
+    <Route path="/testimonials" element={<Testimonials />} />
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:id" element={<Blog />} />
+    <Route path="/admin/*" element={<Admin />} />
+  </Routes>
+</main>
 
-      <Footer />
-      <FloatingButtons />
+{!location.pathname.startsWith("/admin") && (
+  <>
+    <Footer />
+    <FloatingButtons />
+  </>
+)}
+
     </div>
   );
 };
