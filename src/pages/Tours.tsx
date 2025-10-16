@@ -338,7 +338,7 @@ const Tours = () => {
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                   Phone Number <span className="text-amber-600">*</span>
                 </label>
-                <div className="flex gap-2">
+                <div className="flex flex-col lg:flex-row gap-2">
                   <select
                     id="countryCode"
                     name="countryCode"
@@ -431,7 +431,7 @@ const Tours = () => {
             </div>
 
             <div className="md:col-span-2 space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="children" className="block text-sm font-medium text-gray-700">
                     Number of Children (3-11 years) <span className="text-amber-600">*</span>
