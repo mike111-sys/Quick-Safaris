@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaArrowUp, FaComments, FaCalendarCheck } from "react-icons/fa";
+import { FaArrowUp, FaCalendarCheck, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const FloatingButtons = () => {
@@ -41,17 +41,22 @@ const FloatingButtons = () => {
               </motion.button>
             </Link>
 
-            {/* Send Message */}
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex cursor-pointer items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition"
-              >
-                <FaComments />
-                <span>Message Us</span>
-              </motion.button>
-            </Link>
+           {/* WhatsApp Message Button */}
+<a
+  href="https://wa.me/254704041059?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex cursor-pointer items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition"
+  >
+    <FaWhatsapp />
+    <span>WhatsApp</span>
+  </motion.button>
+</a>
+
           </motion.div>
 
           {/* Right-side buttons */}
