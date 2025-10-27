@@ -7,7 +7,7 @@ const FloatingButtons = () => {
   const [showButtons, setShowButtons] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
 
-  const whatsappTexts = ["WhatsApp Us", "Chat Now", "Message Us", "Get in Touch"];
+  const whatsappTexts = ["WhatsApp Us", "Chat Now", "Get in Touch"];
   const bookTexts = ["Book Now", "Reserve Tour", "Book Trip", "Get Started"];
 
   useEffect(() => {
@@ -85,13 +85,13 @@ const FloatingButtons = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(34, 197, 94, 0.4)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex cursor-pointer items-center gap-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full shadow-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 min-w-[160px]"
+                  className="flex cursor-pointer items-center gap-2.5 bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-4 rounded-full shadow-2xl hover:from-green-500 hover:to-green-700 transition-all duration-300 min-w-[180px]"
                 >
                   <motion.div
                     animate={{ rotate: [0, 10, -10, 10, 0] }}
                     transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
                   >
-                    <FaWhatsapp className="text-xl" />
+                    <FaWhatsapp className="text-2xl" />
                   </motion.div>
                   <AnimatePresence mode="wait">
                     <motion.span
@@ -101,7 +101,7 @@ const FloatingButtons = () => {
                       animate="animate"
                       exit="exit"
                       transition={{ duration: 0.3 }}
-                      className="font-semibold text-sm"
+                      className="font-semibold text-base"
                     >
                       {whatsappTexts[textIndex]}
                     </motion.span>
