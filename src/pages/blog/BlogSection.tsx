@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
@@ -14,22 +14,20 @@ type Blog = {
 
 const BlogSection: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true); // ← Added loading state
   const navigate = useNavigate();
-
-  // Scroll to top on mount
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
 
   // Fetch blogs
   useEffect(() => {
+    setLoading(true);
     fetch(`${API}/api/blogs`)
       .then(res => res.json())
       .then(data => {
-        console.log('Fetched blogs:', data); // Debug log
+        console.log('Fetched blogs:', data);
         setBlogs(data);
       })
-      .catch(err => console.error('Error fetching blogs:', err));
+      .catch(err => console.error('Error fetching blogs:', err))
+      .finally(() => setLoading(false)); // ← Always stop loading
   }, []);
 
   const cardVariants = {
@@ -62,8 +60,6 @@ const BlogSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-
-          {/* Main Title */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +70,6 @@ const BlogSection: React.FC = () => {
             Latest Blog Posts
           </motion.h2>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,12 +77,26 @@ const BlogSection: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="mt-4 text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto"
           >
-Explore expert insights on travel, adventure, and unforgettable safari experiences.
+            Explore expert insights on travel, adventure, and unforgettable safari experiences.
           </motion.p>
         </motion.div>
 
-        {/* Blog Grid */}
-        {blogs.length > 0 ? (
+        {/* Conditional Rendering: Loading → Blogs → Empty State */}
+        {loading ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-16"
+          >
+            <div className="bg-white rounded-lg p-8 max-w-md mx-auto border border-gray-200 shadow-md">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-spin">
+                <BookOpen className="w-8 h-8 text-yellow-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Loading Blogs...</h3>
+              <p className="text-gray-600 text-base">Please wait while we fetch the latest posts.</p>
+            </div>
+          </motion.div>
+        ) : blogs.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {blogs.map((blog) => (
               <motion.div
@@ -108,7 +117,7 @@ Explore expert insights on travel, adventure, and unforgettable safari experienc
                       alt={blog.title}
                       className="w-full h-full object-contain rounded-t-lg transition-opacity duration-700"
                       onError={(e) => {
-                        console.log('Image failed to load:', blog.cover_image); // Debug log
+                        console.log('Image failed to load:', blog.cover_image);
                         e.currentTarget.className = 'hidden';
                         const parent = e.currentTarget.parentElement;
                         if (parent) {

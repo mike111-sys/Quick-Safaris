@@ -286,7 +286,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
                   loading="lazy"
                   src={`${API}/api/uploads/blog-images/${blog.cover_image}`}
                   alt={blog.title}
-                  className="w-full h-64 md:h-96 object-contain rounded-lg shadow-sm hover:scale-105 transition-transform duration-700"
+                  className="w-full h-64 md:h-96 object-cover rounded-lg shadow-sm hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </motion.div>
