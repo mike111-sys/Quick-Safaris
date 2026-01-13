@@ -18,6 +18,7 @@ const API = import.meta.env.VITE_API_URL;
 
 type Blog = {
   id: number;
+  slug: string;
   title: string;
   content: string;
   cover_image: string | null;
@@ -25,13 +26,14 @@ type Blog = {
   created_at: string;
 };
 
-type Props = { id: string };
+type Props = { slug: string };
 
-const BlogDetail: React.FC<Props> = ({ id }) => {
+const BlogDetail: React.FC<Props> = ({ slug }) => {
   // Scroll to top whenever the blog id changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [id]);
+  }, [slug]);
+  
 
   const [blog, setBlog] = useState<Blog | null>(null);
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -96,12 +98,11 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    if (id) {
-      fetch(`${API}/api/blogs/${id}`)
-        .then((res) => res.json())
-        .then(setBlog);
-    }
-  }, [id]);
+    fetch(`${API}/api/blogs/slug/${slug}`)
+      .then(res => res.json())
+      .then(setBlog);
+  }, [slug]);
+  
 
   if (!blog) {
     return (
@@ -115,7 +116,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
   }
 
   // Find current index for navigation
-  const currentIndex = blogs.findIndex((b) => b.id === Number(id));
+  const currentIndex = blogs.findIndex((b) => b.slug === slug);
   const prevBlog = currentIndex > 0 ? blogs[currentIndex - 1] : null;
   const nextBlog =
     currentIndex < blogs.length - 1 ? blogs[currentIndex + 1] : null;
@@ -337,7 +338,7 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
           >
             {prevBlog ? (
               <button
-                onClick={() => navigate(`/blog/${prevBlog.id}`)}
+                onClick={() => navigate(`/blog/${prevBlog.slug}`)              }
                 className="group cursor-pointer w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -349,8 +350,8 @@ const BlogDetail: React.FC<Props> = ({ id }) => {
 
             {nextBlog && (
               <button
-                onClick={() => navigate(`/blog/${nextBlog.id}`)}
-                className="group cursor-pointer w-full bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-end"
+              onClick={() => navigate(`/blog/${nextBlog.slug}`)}
+              className="group cursor-pointer w-full bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center gap-2 justify-end"
               >
                 <span className="truncate">Next: {nextBlog.title}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

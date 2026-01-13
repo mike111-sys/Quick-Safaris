@@ -7,6 +7,7 @@ const API = import.meta.env.VITE_API_URL;
 
 type Blog = {
   id: number;
+  slug: string;
   title: string;
   cover_image: string | null;
   created_at: string;
@@ -106,7 +107,7 @@ const BlogSection: React.FC = () => {
                 animate="visible"
                 viewport={{ once: true }}
                 className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden cursor-pointer min-h-[300px] flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                onClick={() => navigate(`/blog/${blog.id}`)}
+                onClick={() => navigate(`/blog/${blog.slug}`)}
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] overflow-hidden">

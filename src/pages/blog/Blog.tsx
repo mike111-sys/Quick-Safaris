@@ -5,17 +5,16 @@ import BlogSection from './BlogSection';
 const BlogDetail = React.lazy(() => import('./BlogDetail'));
 
 const Blog: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
 
-  if (id) {
-    // Lazy load detail view for better performance
+  if (slug) {
     return (
       <React.Suspense fallback={<div>Loading...</div>}>
-        <BlogDetail id={id} />
+        <BlogDetail slug={slug} />
       </React.Suspense>
     );
   }
-
+  
   return (
     <>
       <BlogSection />
